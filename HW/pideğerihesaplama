@@ -1,0 +1,42 @@
+
+public class pidegeri {
+
+	public static void main(String[] args) {
+		
+				double sayac;         //Program içinde kullanılacak değişkenlerin tanımlanması-->
+				double toplam=0.0;    //-->ve değişken türlerine göre ilk değer atamalarının yapılması.
+				double fark;
+				double pisayisi=0.0;
+				int adim=0;
+				for(sayac=1.0;sayac<=200000;sayac=sayac+4) //pi değerini hesaplamak icin oluşturulan döngü.
+				{
+					toplam=toplam+4/(sayac); //Verilen formuldeki toplamalar için geçerli kuralın yazılması.
+					fark=fark+4/(sayac+2);   //Verilen formuldeki çıkarmalar için geçerli kuralın yazılması.
+				}
+				pisayisi=toplam-fark;       
+				System.out.println("Pi degeri : "+pisayisi); //200.000.adımdaki pi değerinin ekrana yazdırılması.
+				
+				
+				for(double i=1;i<=1000000;i=i+4) //Kaç adımda 3.141519 ile başlayan değere ulaşacağını bulmak için oluşturulan döngü.
+				{
+					toplam=toplam+4/i; //pi hesaplamalarının yapılması.
+					fark=fark+4/i+2;
+				
+					pisayisi=toplam-fark;
+					if(pisayisi==3.141519){ 
+						adim++;
+						break; //pi değeri 3.141519 ile başladığında programın durması için gerekli komut.
+					}
+					else
+						adim++;
+				}
+				
+				System.out.println(" 3.141519 ile baslayan sayiya ulaşabilmesi icin " + adim + " adim gecmesi gerekir.");//Adım sayısını ekrana yazdırma.
+			
+			}
+
+		
+
+	}
+
+
